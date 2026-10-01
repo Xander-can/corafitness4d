@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Laguna Fitness — Cora Kasperski, IFBB Pro | Laguna Beach</title>
+<meta name="description" content="Old school training from an IFBB Professional. 20+ years transforming lives in Laguna Beach — in-person at the studio or online through Trainerize.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M4 40 Q32 4 60 30 Q28 18 4 40 Z" fill="%23F2521B"/><text x="32" y="56" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="26" fill="white">L</text></svg>'>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0B0A;--bg2:#12100E;--ink:#EDE8DF;--mut:#9A9188;--line:rgba(237,232,223,.14);
+  --acc:#F2521B;--acc-hi:#FF6A33;--disp:'Oswald',sans-serif;--body:'Inter',sans-serif;--max:1240px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:#0C0B0A}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 5vw}
+.kick{font-family:var(--disp);font-size:11px;letter-spacing:.42em;color:var(--acc);text-transform:uppercase}
+.h-d{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:.01em}
+.sub{color:var(--mut);max-width:60ch}
+.js .rev{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.js .rev.in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--disp);font-weight:600;letter-spacing:.16em;font-size:12.5px;text-transform:uppercase;padding:1rem 1.9rem;border:1px solid var(--acc);background:var(--acc);color:#0C0B0A;cursor:pointer;transition:.25s}
+.btn:hover{background:var(--acc-hi);border-color:var(--acc-hi)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+.logo-svg{height:40px;width:auto;display:block}
+.logo-svg.xl{height:64px;margin:0 auto 1.6rem}
+
+/* loader */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;transition:opacity .6s,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .bar{width:120px;height:2px;background:var(--line);overflow:hidden}
+#loader .bar i{display:block;height:100%;width:40%;background:var(--acc);animation:ld 1s infinite alternate ease-in-out}
+@keyframes ld{to{transform:translateX(180%)}}
+
+/* nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:1rem 4vw;transition:.3s}
+#nav.solid{background:rgba(12,11,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+#nav .links{display:flex;gap:2rem;font-family:var(--disp);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+#nav .links a{color:var(--mut);transition:.2s}
+#nav .links a:hover{color:var(--ink)}
+#nav .nav-cta{padding:.7rem 1.3rem;font-size:11.5px}
+#burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);font-size:1.1rem;padding:.45rem .7rem;cursor:pointer}
+#mnav{position:fixed;inset:0;background:rgba(12,11,10,.98);z-index:40;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem}
+#mnav.open{display:flex}
+#mnav a{font-family:var(--disp);font-size:1.4rem;letter-spacing:.2em;text-transform:uppercase}
+#mclose{position:absolute;top:1.2rem;right:1.4rem;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
+
+/* hero */
+#hero{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:flex-end;background:#0C0B0A}
+#hero .bg{position:absolute;inset:0;background:url('assets/studio_cora_bag.jpg') center/cover;opacity:.5}
+#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.55),rgba(12,11,10,.15) 45%,var(--bg))}
+#hero .wrap{position:relative;z-index:2;padding-bottom:9vh;width:100%}
+#hero .h-d{font-size:clamp(2.6rem,7vw,5.4rem);max-width:14ch;margin:.9rem 0 1.2rem}
+#hero .tag{font-family:var(--disp);text-transform:uppercase;letter-spacing:.14em;color:var(--ink);opacity:.85;font-size:clamp(.95rem,1.6vw,1.15rem)}
+#hero .ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+#hero .facts{display:flex;gap:2.4rem;margin-top:3rem;flex-wrap:wrap}
+#hero .facts b{font-family:var(--disp);font-size:1.5rem;display:block;color:var(--acc)}
+#hero .facts span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+
+/* sections */
+section{padding:6.5rem 0}
+.sec-head{margin-bottom:3rem}
+.sec-head .h-d{font-size:clamp(2rem,4.6vw,3.4rem);margin:.6rem 0 1rem}
+#story{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#story .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start}
+#story blockquote{font-family:var(--disp);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.5;text-transform:uppercase;border-left:2px solid var(--acc);padding-left:1.4rem;margin-bottom:1.6rem}
+.cover-strip{display:flex;gap:1.6rem;align-items:center;margin-top:2.6rem}
+.cover-strip img{width:110px;border:1px solid var(--line)}
+.cover-strip .kick{display:block}
+
+/* journey */
+#jintro{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6vw}
+#jintro .h-d{font-size:clamp(2.2rem,5.4vw,4.2rem);margin:1.2rem 0 1rem}
+#jintro .lines{font-family:var(--disp);text-transform:uppercase;letter-spacing:.3em;color:var(--mut);font-size:13px;line-height:2.2}
+#jintro .cue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);color:var(--mut);font-size:1.4rem;animation:cue 1.6s infinite}
+@keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+#jwrap{position:relative}
+.jsticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.jvignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.5) 100%)}
+#prog{position:fixed;bottom:0;left:0;right:0;height:3px;z-index:25;background:rgba(255,255,255,.07)}
+#prog i{display:block;height:100%;width:0;background:var(--acc)}
+#jgallery{display:none;padding:4rem 0 8rem}
+html.no3d #jwrap{display:none}
+html.no3d #jgallery{display:block}
+#jgallery .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+#jgallery img{width:100%;height:300px;object-fit:cover}
+
+/* studio */
+#studio{background:var(--bg2);border-top:1px solid var(--line)}
+.st-banner{position:relative;height:56vh;min-height:340px;overflow:hidden;margin-bottom:2.4rem}
+.st-banner img{width:100%;height:100%;object-fit:cover}
+.st-banner .cap{position:absolute;left:22px;bottom:18px;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.st-grid figure{position:relative;overflow:hidden}
+.st-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .6s}
+.st-grid figure:hover img{transform:scale(1.04)}
+.st-grid figcaption{position:absolute;left:12px;bottom:10px;font-family:var(--disp);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.st-addr{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:2.6rem;align-items:center}
+
+/* community */
+.community{padding:5rem 0 3rem}
+.community .h-d{font-size:clamp(2rem,5vw,3.4rem);margin:.6rem 0 1rem}
+.comm-photo{position:relative;margin:1.5rem 0 0;overflow:hidden}
+.comm-photo img{width:100%;height:clamp(320px,70vh,640px);object-fit:cover}
+.comm-photo figcaption{position:absolute;left:22px;bottom:18px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+
+/* cora */
+#cora .cols{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+#cora .imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#cora .imgs img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+#cora ul{list-style:none;margin:1.6rem 0}
+#cora li{padding:.55rem 0;border-bottom:1px solid var(--line);font-family:var(--disp);letter-spacing:.12em;text-transform:uppercase;font-size:14px;color:var(--ink)}
+#cora li b{color:var(--acc)}
+
+/* up to you */
+#up{background:var(--acc);color:#0C0B0A;text-align:center}
+#up .h-d{font-size:clamp(2.4rem,6vw,4.6rem)}
+#up p{max-width:64ch;margin:1.2rem auto 0;font-weight:500}
+#up .btn{background:#0C0B0A;border-color:#0C0B0A;color:#EDE8DF;margin-top:2rem}
+#up .btn:hover{background:#000}
+
+/* programs */
+#programs .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#programs .card{border:1px solid var(--line);padding:2rem;background:var(--bg2)}
+#programs .card h3{font-family:var(--disp);text-transform:uppercase;font-size:1.25rem;margin:.8rem 0 .6rem}
+#programs .card p{color:var(--mut);font-size:.95rem}
+#programs .card .btn{margin-top:1.4rem;padding:.75rem 1.3rem;font-size:11px}
+#programs .list{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem 2rem;margin-top:2.6rem}
+#programs .list div{padding:.55rem 0;border-top:1px solid var(--line);font-family:var(--disp);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+#programs .list div::before{content:'— ';color:var(--acc)}
+
+/* testimonials */
+#voices{background:var(--bg2);border-top:1px solid var(--line)}
+#voices .t{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:1rem}
+#voices blockquote{font-family:var(--disp);font-size:1.15rem;line-height:1.55;text-transform:uppercase}
+#voices cite{display:block;margin-top:1rem;font-style:normal;color:var(--acc);letter-spacing:.24em;font-size:12px;font-family:var(--disp);text-transform:uppercase}
+#voices .yelp{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+#voices .yelp b{font-family:var(--disp);font-size:1.4rem}
+.stars{color:var(--acc);letter-spacing:.2em}
+
+/* instagram */
+#gram .row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:2rem}
+#gram .row img{width:100%;aspect-ratio:1;object-fit:cover}
+#gram .row a{position:relative;display:block;overflow:hidden}
+#gram .row a::after{content:'↗';position:absolute;top:10px;right:12px;color:#fff;opacity:0;transition:.3s}
+#gram .row a:hover::after{opacity:1}
+
+/* contact */
+#contact{text-align:center;padding:8rem 0}
+#contact .h-d{font-size:clamp(3rem,9vw,6.5rem);line-height:.95}
+#contact .ways{display:flex;gap:2.6rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+#contact .ways b{font-family:var(--disp);display:block;font-size:1.05rem;letter-spacing:.1em}
+#contact .ways span{color:var(--mut);font-size:13px}
+#contact .addr{margin-top:2.6rem;color:var(--mut);font-size:14px}
+#contact .ctas{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:3rem 0}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+footer .soc{display:flex;gap:1.4rem;font-family:var(--disp);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+footer .soc a:hover{color:var(--acc)}
+footer small{color:var(--mut)}
+
+/* modal */
+#modal{position:fixed;inset:0;background:rgba(8,7,6,.8);z-index:45;display:none;align-items:center;justify-content:center;padding:5vw}
+#modal.open{display:flex}
+#modal .box{background:var(--bg2);border:1px solid var(--line);max-width:460px;width:100%;padding:2.4rem;position:relative}
+#modal h3{font-family:var(--disp);text-transform:uppercase;font-size:1.5rem;margin:.6rem 0 1rem}
+#modal input,#modal textarea{width:100%;background:#0C0B0A;border:1px solid var(--line);color:var(--ink);padding:.85rem;margin-bottom:.8rem;font-family:var(--body)}
+#modal .x{position:absolute;top:.8rem;right:1rem;background:none;border:0;color:var(--mut);font-size:1.3rem;cursor:pointer}
+
+@media(max-width:900px){
+  #nav .links,#nav .nav-cta{display:none}
+  #burger{display:block}
+  #story .cols,#cora .cols{grid-template-columns:1fr}
+  .st-grid{grid-template-columns:repeat(2,1fr)}
+  #programs .cards{grid-template-columns:1fr}
+  #programs .list{grid-template-columns:1fr}
+  #voices .t{grid-template-columns:1fr}
+  #gram .row{grid-template-columns:repeat(2,1fr)}
+  section{padding:4.5rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rev{transition:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LAGUNA FITNESS logo symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-lf" viewBox="0 0 264 76">
+    <defs><linearGradient id="lfSwoosh" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#E8481A"/>
+    </linearGradient></defs>
+    <path d="M 16 50 Q 96 -16 252 28 Q 118 16 16 50 Z" fill="url(#lfSwoosh)"/>
+    <text x="130" y="47" text-anchor="middle" font-family="Oswald,sans-serif" font-size="30" font-weight="700" font-style="italic" letter-spacing="1" fill="#FFFFFF">LAGUNA</text>
+    <text x="130" y="68" text-anchor="middle" font-family="Oswald,sans-serif" font-size="13" font-weight="500" letter-spacing="7" fill="#FFFFFF">FITNESS</text>
+  </symbol>
+</svg>
+
+<div id="loader"><svg class="logo-svg" role="img" aria-label="Laguna Fitness"><use href="#logo-lf"/></svg><div class="bar"><i></i></div></div>
+
+<nav id="nav">
+  <a class="brand" href="#hero" aria-label="Laguna Fitness — home"><svg class="logo-svg" role="img" aria-label="Laguna Fitness"><use href="#logo-lf"/></svg></a>
+  <div class="links">
+    <a href="#transformations">The Difference</a><a href="#studio">Studio</a><a href="#cora">Cora</a><a href="#programs">Programs</a><a href="#contact">Contact</a>
+  </div>
+  <a class="btn nav-cta" href="tel:+19499392672">Text Cora Now</a>
+  <button id="burger" aria-label="Menu">☰</button>
+</nav>
+<div id="mnav"><button id="mclose" aria-label="Close">✕</button>
+  <a href="#transformations">The Difference</a><a href="#studio">Studio</a><a href="#cora">Cora</a><a href="#programs">Programs</a><a href="#contact">Contact</a>
+  <a class="btn" href="tel:+19499392672">Text Cora Now</a>
+</div>
+
+<header id="hero">
+  <div class="bg" role="img" aria-label="Cora Kasperski training at Laguna Fitness in Laguna Beach"></div>
+  <div class="wrap">
+    <p class="kick rev">Laguna Fitness · IFBB Professional · Laguna Beach, CA</p>
+    <h1 class="h-d rev">Old School Training From An IFBB Professional</h1>
+    <p class="tag rev">It's your time. And time to muscle up. — Train with Laguna's best.</p>
+    <div class="ctas rev">
+      <a class="btn" href="#transformations">See the Cora Difference</a>
+      <a class="btn ghost" href="tel:+19499392672">Text +1 (949) 939-2672</a>
+    </div>
+    <div class="facts rev">
+      <div><b>20+</b><span>Years Experience</span></div>
+      <div><b>IFBB</b><span>Fitness Professional</span></div>
+      <div><b>1:1</b><span>In-Person &amp; Online</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="kick rev">The Cora Difference</p>
+        <h2 class="h-d rev">Transform Your Life Through In-Person Or Online Personal Training With Cora.</h2>
+        <blockquote class="rev">"If you are ready to be the best you can be, then you are ready for in-person or online personal training from Cora."</blockquote>
+        <p class="sub rev">In over 20 years of personal training, Cora has changed the lives of people just like you through customized fitness and nutrition plans that transform how her clients look and feel.</p>
+      </div>
+      <div>
+        <p class="sub rev">You can train with Cora in her studio in Laguna Beach — or get the same great result through online personal training. Her 12-week program is delivered through the Trainerize app with 7-days-a-week instruction:</p>
+        <div class="cover-strip rev">
+          <img src="assets/studio_cover_hers.jpg" alt="Muscle &amp; Fitness Hers cover featuring Cora" loading="lazy">
+          <div><span class="kick">As Featured In</span><p style="font-family:var(--disp);text-transform:uppercase;font-size:1.1rem">Muscle &amp; Fitness Hers</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3D TRANSFORMATION JOURNEY ============ -->
+<section id="transformations" style="padding:0">
+  <div id="jintro">
+    <svg class="logo-svg xl" role="img" aria-label="Laguna Fitness"><use href="#logo-lf"/></svg>
+    <p class="kick">Real People · Real Work · Real Transformations</p>
+    <h2 class="h-d">See The<br>Cora Difference</h2>
+    <p class="lines">Four clients · Twenty moments<br>Scroll to walk through them</p>
+    <div class="cue">↓</div>
+  </div>
+  <div id="jwrap">
+    <div class="jsticky">
+      <canvas id="scene" aria-label="3D transformation journey"></canvas>
+      <div class="jvignette"></div>
+    </div>
+  </div>
+  <div id="jgallery"><div class="wrap"><p class="kick" style="margin-bottom:1.4rem">The Transformations</p><div class="g" id="ggrid"></div></div></div>
+</section>
+<div id="prog"><i id="progfill"></i></div>
+
+<section id="studio">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick rev">1999 S Coast Hwy · Laguna Beach</p><h2 class="h-d rev">The Studio</h2>
+    <p class="sub rev">Cora's private Laguna Fitness studio — old-school iron, real coaching, zero ego. Step inside.</p></div>
+    <figure class="st-banner rev"><img src="assets/studio_window.jpg" alt="Inside Cora's Laguna Beach studio" loading="lazy"><figcaption class="cap kick">Laguna Beach · CA</figcaption></figure>
+    <div class="st-grid">
+      <figure class="rev"><img src="assets/studio_floor_01.jpg" alt="Training floor" loading="lazy"><figcaption>Training Floor</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_cora_bag.jpg" alt="Cora at the heavy bag" loading="lazy"><figcaption>Cora At The Bag</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_rack.jpg" alt="Squat rack" loading="lazy"><figcaption>The Rack</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_treadmills.jpg" alt="Cardio area" loading="lazy"><figcaption>Cardio</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_legpress.jpg" alt="Leg press" loading="lazy"><figcaption>Leg Press</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_floor_02.jpg" alt="Dumbbell row" loading="lazy"><figcaption>Dumbbells</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_floor_03.jpg" alt="Studio overview" loading="lazy"><figcaption>The Full Floor</figcaption></figure>
+      <figure class="rev"><img src="assets/studio_cover_hers.jpg" alt="Magazine cover on display" loading="lazy"><figcaption>Cover History</figcaption></figure>
+    </div>
+    <div class="st-addr rev">
+      <div><b style="font-family:var(--disp)">TRAIN WITH CORA IN PERSON</b><br><span class="sub">1999 S Coast Hwy, Laguna Beach, CA 92651</span></div>
+      <a class="btn" href="tel:+19499392672">Text Cora Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap">
+    <p class="kick rev">The Laguna Fitness Community</p>
+    <h2 class="h-d rev">More Than A Gym.<br>A Family.</h2>
+    <p class="sub rev">Cora's clients don't just train here — they show up for each other, in the studio and everywhere else.</p>
+  </div>
+  <figure class="comm-photo rev">
+    <img src="assets/community.jpg" alt="The Laguna Fitness community gathered outside the Laguna Beach studio" loading="lazy">
+    <figcaption class="kick">Laguna Beach · CA</figcaption>
+  </figure>
+</section>
+
+<section id="cora">
+  <div class="wrap cols">
+    <div class="imgs rev">
+      <img src="assets/cora_portrait.jpg" alt="Cora Kasperski portrait" loading="lazy">
+      <img src="assets/cora_stage.jpg" alt="Cora on the NPC stage" loading="lazy">
+    </div>
+    <div>
+      <p class="kick rev">Meet Your Trainer</p>
+      <h2 class="h-d rev">Cora Kasperski</h2>
+      <p class="sub rev">I.F.B.B. Fitness Professional · #1 Personal Trainer in Laguna Beach · Over 20 years of experience. Old school training from an IFBB professional.</p>
+      <ul class="rev">
+        <li><b>01</b> — Custom programs in weight training &amp; cardio</li>
+        <li><b>02</b> — Nutritional plans and support</li>
+        <li><b>03</b> — Frequent contact with Cora</li>
+        <li><b>04</b> — Membership in her fitness community</li>
+      </ul>
+      <a class="btn ghost rev" href="#programs">Train With Cora</a>
+    </div>
+  </div>
+</section>
+
+<section id="up">
+  <div class="wrap">
+    <h2 class="h-d rev">It's Up To You.</h2>
+    <p class="rev">You can think about changing your life — or you can take control and do it. For those ready to be the best they can, Cora will support you in person or through online coaching.</p>
+    <a class="btn rev" href="#modal-open" id="openModal">Start The 12-Week Program</a>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick rev">How You Can Train</p><h2 class="h-d rev">Programs</h2></div>
+    <div class="cards">
+      <div class="card rev"><p class="kick">In The Studio</p><h3>1:1 Coaching</h3><p>Private, personalized sessions with Cora at Laguna Fitness. Every rep coached, every week adjusted.</p><a class="btn" href="tel:+19499392672">Text Cora Now</a></div>
+      <div class="card rev"><p class="kick">Anywhere</p><h3>12-Week Online</h3><p>The same great result through the Trainerize app — 7 days a week of instruction, check-ins and accountability.</p><a class="btn" href="#modal-open" id="openModal2">Start 12-Week Program</a></div>
+      <div class="card rev"><p class="kick">Fuel</p><h3>Custom Nutrition</h3><p>Specific meal plans and nutritional counseling built around your body and your goals.</p><a class="btn" href="mailto:cora@badasscora.com">Email Cora</a></div>
+    </div>
+    <div class="list rev">
+      <div>Customized Fitness Plans</div><div>Weekly Adjustments</div><div>Nutritional Counseling</div>
+      <div>Specific Meal Plans</div><div>Daily Follow-Ups Via Text</div><div>Bi-Weekly Phone Support</div>
+      <div>Supplement Guidance</div><div>Tracking Of Progress</div><div>Group &amp; Private Gym Training</div>
+    </div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick rev">Client Stories</p><h2 class="h-d rev">In Their Words</h2></div>
+    <!-- Replace with exact quotes from badasscora.com if you have the copy -->
+    <div class="t">
+      <div class="rev"><blockquote>"Cora changed my life. The accountability and the programming — it simply works."</blockquote><cite>Mark R.</cite></div>
+      <div class="rev"><blockquote>"I've trained for years. Nobody has gotten results out of me like Cora has."</blockquote><cite>Glenda C.</cite></div>
+      <div class="rev"><blockquote>"Old school, personal, and completely committed to her clients. Best trainer in Laguna."</blockquote><cite>Frank Hufnagel</cite></div>
+    </div>
+    <div class="yelp rev">
+      <b>4.5<span class="stars">★★★★★</span></b>
+      <span class="sub">Rated by real clients on Yelp</span>
+      <a class="btn ghost" href="https://www.yelp.com/biz/laguna-fitness-laguna-beach" target="_blank" rel="noopener">Read The Reviews</a>
+    </div>
+  </div>
+</section>
+
+<section id="gram">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick rev">@badass_cora_</p><h2 class="h-d rev">From Cora's Instagram</h2></div>
+    <div class="row">
+      <a href="https://www.instagram.com/badass_cora_/" target="_blank" rel="noopener"><img src="assets/ig_getfit.jpg" alt="Cora — Get Fit" loading="lazy"></a>
+      <a href="https://www.instagram.com/badass_cora_/" target="_blank" rel="noopener"><img src="assets/cora_stage.jpg" alt="Cora on stage" loading="lazy"></a>
+      <a href="https://www.instagram.com/badass_cora_/" target="_blank" rel="noopener"><img src="assets/studio_floor_03.jpg" alt="In the studio" loading="lazy"></a>
+      <a href="https://www.instagram.com/badass_cora_/" target="_blank" rel="noopener"><img src="assets/community.jpg" alt="The community" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="h-d rev">Let's Get<br>Started</h2>
+    <div class="ways rev">
+      <div><span>Text</span><b><a href="tel:+19499392672">+1 (949) 939-2672</a></b></div>
+      <div><span>Email</span><b><a href="mailto:cora@badasscora.com">cora@badasscora.com</a></b></div>
+      <div><span>Studio</span><b>1999 S Coast Hwy<br>Laguna Beach, CA 92651</b></div>
+    </div>
+    <div class="ctas rev">
+      <a class="btn" href="tel:+19499392672">Text Cora Now</a>
+      <a class="btn ghost" href="#modal-open" id="openModal3">Introduce Yourself</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <svg class="logo-svg" role="img" aria-label="Laguna Fitness"><use href="#logo-lf"/></svg>
+    <div class="soc">
+      <a href="https://www.instagram.com/badass_cora_/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/badasscora" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/in/corakasperski" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.yelp.com/biz/laguna-fitness-laguna-beach" target="_blank" rel="noopener">Yelp</a>
+      <a href="https://maps.google.com/?q=1999+S+Coast+Hwy+Laguna+Beach+CA+92651" target="_blank" rel="noopener">Google</a>
+    </div>
+    <small>© <span id="yr"></span> Laguna Fitness · Laguna Beach, CA</small>
+  </div>
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true" aria-label="12-week coaching">
+  <div class="box">
+    <button class="x" id="modalX" aria-label="Close">✕</button>
+    <p class="kick">12-Week Online Program</p>
+    <h3>Introduce Yourself</h3>
+    <form id="coachForm">
+      <input required id="fName" placeholder="Your name" autocomplete="name">
+      <input required id="fEmail" type="email" placeholder="Your email" autocomplete="email">
+      <textarea id="fGoal" rows="3" placeholder="Your goal — what do you want to change?"></textarea>
+      <button class="btn" type="submit" style="width:100%;justify-content:center">Send To Cora</button>
+    </form>
+    <p style="color:var(--mut);font-size:12px;margin-top:.8rem">Opens your email app — or just text <a href="tel:+19499392672" style="color:var(--acc)">+1 (949) 939-2672</a>.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script>window.THREE||document.write('<script src="https://unpkg.com/three@0.147.0/build/three.min.js"><\/script>')</script>
+<script>
+/* ================= UI ================= */
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>40)},{passive:true});
+var mnav=document.getElementById('mnav');
+document.getElementById('burger').onclick=function(){mnav.classList.add('open')};
+document.getElementById('mclose').onclick=function(){mnav.classList.remove('open')};
+mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open')})});
+document.getElementById('yr').textContent=new Date().getFullYear();
+['openModal','openModal2','openModal3'].forEach(function(id){var b=document.getElementById(id);if(b)b.addEventListener('click',function(e){e.preventDefault();document.getElementById('modal').classList.add('open')})});
+document.getElementById('modalX').onclick=function(){document.getElementById('modal').classList.remove('open')};
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open')});
+document.getElementById('coachForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=fName.value,email=fEmail.value,g=fGoal.value;
+  location.href='mailto:cora@badasscora.com?subject='+encodeURIComponent('12-Week Program — '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+email+'\nGoal: '+g);
+  document.getElementById('modal').classList.remove('open');
+});
+
+/* reveal-on-scroll + fail-safe */
+function revealAll(){document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+  document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  setTimeout(revealAll,2500);
+}else revealAll();
+setTimeout(revealAll,2500);
+
+/* loader always fades */
+setTimeout(function(){document.getElementById('loader').classList.add('done')},3500);
+
+/* ================= ASSET CHECK (console) ================= */
+var ASSETS=['stage1_front_01.jpg','stage1_front_02.jpg','stage2_flex_01.jpg','stage2_flex_02.jpg',
+'stage3_torso_01.jpg','stage3_torso_02.jpg','stage4_back_01.jpg','stage4_back_02.jpg',
+'stage5_backflex_01.jpg','stage5_backflex_02.jpg','stage6_motion_01.jpg','stage6_motion_03.jpg',
+'stage7_front_01.jpg','stage7_front_02.jpg','stage8_flex_01.jpg','stage8_flex_02.jpg',
+'stage9_front_01.jpg','stage9_front_02.jpg','stage11_backflex_01.jpg','stage11_backflex_02.jpg',
+'studio_cora_bag.jpg','studio_cover_hers.jpg','studio_floor_01.jpg','studio_floor_02.jpg','studio_floor_03.jpg',
+'studio_treadmills.jpg','studio_rack.jpg','studio_legpress.jpg','studio_window.jpg',
+'cora_portrait.jpg','cora_stage.jpg','ig_getfit.jpg','community.jpg'];
+var missing=[];
+ASSETS.forEach(function(n){var im=new Image();im.onerror=function(){missing.push(n);console.warn('MISSING ASSET:',n)};im.src='assets/'+n});
+window.addEventListener('load',function(){setTimeout(function(){
+  console.log(missing.length?('✗ '+missing.length+' missing: '+missing.join(', ')):'✓ All '+ASSETS.length+' assets found');
+},3000)});
+
+/* ================= 3D JOURNEY ================= */
+var PHOTOS=['stage1_front_01.jpg','stage1_front_02.jpg',        /* Client A */
+            'stage2_flex_01.jpg','stage2_flex_02.jpg',
+            'stage5_backflex_01.jpg','stage5_backflex_02.jpg',
+            'stage3_torso_01.jpg','stage3_torso_02.jpg',        /* Client B */
+            'stage6_motion_01.jpg','stage6_motion_03.jpg',
+            'stage4_back_01.jpg','stage4_back_02.jpg',
+            'stage7_front_01.jpg','stage7_front_02.jpg',        /* Client C */
+            'stage8_flex_01.jpg','stage8_flex_02.jpg',
+            'stage9_front_01.jpg','stage9_front_02.jpg',        /* Client D */
+            'stage11_backflex_01.jpg','stage11_backflex_02.jpg'];
+var B=PHOTOS.length;
+var REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var IS_TOUCH=matchMedia('(pointer: coarse)').matches;
+var SPACING=7.5, FOCUS=9.0;
+
+/* fallback gallery photos (also used if WebGL unavailable) */
+var gg=document.getElementById('ggrid');
+PHOTOS.forEach(function(n){var im=document.createElement('img');im.src='assets/'+n;im.alt='Client transformation';im.loading='lazy';gg.appendChild(im)});
+
+var wrap=document.getElementById('jwrap');
+wrap.style.height=(B*95+120)+'vh';
+
+var renderer=null;
+try{
+  renderer=new THREE.WebGLRenderer({canvas:document.getElementById('scene'),antialias:!IS_TOUCH});
+}catch(e){ renderer=null; }
+if(!window.THREE || !renderer){
+  document.documentElement.classList.add('no3d');
+  document.getElementById('loader').classList.add('done');
+}else{
+  var scene=new THREE.Scene(); scene.background=new THREE.Color('#080706');
+  var camera=new THREE.PerspectiveCamera(IS_TOUCH?62:50, innerWidth/innerHeight, .1, 90);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, IS_TOUCH?1.5:1.75));
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.outputEncoding=THREE.sRGBEncoding;
+
+  var VERT='varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }';
+  var FRAG=[
+  'varying vec2 vUv;',
+  'uniform sampler2D uMap; uniform float uOpacity,uReveal,uDir,uBlur,uDim;',
+  'void main(){',
+  '  float line = mix(vUv.x, 1.0-vUv.x, step(0.5,uDir)) + (1.0-vUv.y)*0.18;',
+  '  float e = uReveal*1.45 - 0.25;',
+  '  float m = smoothstep(e, e+0.06, line);',
+  '  vec2 off = vec2(uBlur*0.009);',
+  '  vec3 col = texture2D(uMap,vUv).rgb;',
+  '  if(uBlur>0.01){',
+  '    col = ( texture2D(uMap,vUv+off).rgb + texture2D(uMap,vUv-off).rgb',
+  '          + texture2D(uMap,vUv+vec2(off.x,-off.y)).rgb + texture2D(uMap,vUv+vec2(-off.x,off.y)).rgb ) * 0.25;',
+  '  }',
+  '  col *= uDim;',
+  '  float glow = exp(-pow((line-e)/0.03,2.0)) * 0.5 * step(0.02,uReveal) * (1.0-step(0.985,uReveal));',
+  '  col += glow * vec3(1.0,0.62,0.30) * 0.35;',
+  '  gl_FragColor = vec4(col, m*uOpacity);',
+  '  if(gl_FragColor.a < 0.01) discard;',
+  '}'].join('\n');
+
+  function plateTex(){ /* visible error plate if a photo is missing */
+    var c=document.createElement('canvas');c.width=512;c.height=720;var x=c.getContext('2d');
+    x.fillStyle='#161310';x.fillRect(0,0,512,720);
+    x.fillStyle='#5a5248';x.font='28px Oswald,sans-serif';x.textAlign='center';
+    x.fillText('PHOTO UNAVAILABLE',256,360);
+    var t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return t;
+  }
+
+  var planes=[], loader=new THREE.TextureLoader(), uniforms=[];
+  PHOTOS.forEach(function(name,i){
+    var u={uMap:{value:null},uOpacity:{value:0},uReveal:{value:0},uDir:{value:i%2},uBlur:{value:1},uDim:{value:0}};
+    uniforms.push(u);
+    var mat=new THREE.ShaderMaterial({vertexShader:VERT,fragmentShader:FRAG,uniforms:u,transparent:true,depthWrite:false});
+    var mesh=new THREE.Mesh(new THREE.PlaneGeometry(4,6),mat);
+    mesh.position.set((i%2?0.8:-0.8)*0.9,(i%3-1)*0.35,-i*SPACING);
+    mesh.visible=false; scene.add(mesh); planes.push(mesh);
+    loader.load('assets/'+name,function(tex){
+      tex.encoding=THREE.sRGBEncoding; tex.minFilter=THREE.LinearFilter;
+      u.uMap.value=tex;
+      var a=tex.image.width/tex.image.height, H=6.0, W=H*a, MAXW=6.6;
+      if(W>MAXW){W=MAXW;H=W/a;}
+      mesh.geometry=new THREE.PlaneGeometry(W,H); mesh.visible=true;
+    },undefined,function(){ u.uMap.value=plateTex(); mesh.geometry=new THREE.PlaneGeometry(4.2,6); mesh.visible=true; });
+  });
+
+  var startZ=7.5, endZ=-(B-1)*SPACING-5.5;
+  var cur=startZ, tgt=startZ, mx=0,my=0,tx=0,ty=0;
+  if(!IS_TOUCH) addEventListener('mousemove',function(e){tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5)},{passive:true});
+  addEventListener('resize',function(){
+    camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth,innerHeight);
+  });
+  var progfill=document.getElementById('progfill');
+  function frame(){
+    var r=wrap.getBoundingClientRect();
+    var total=r.height-innerHeight;
+    var p=Math.min(1,Math.max(0,(-r.top)/total));
+    tgt=startZ+(endZ-startZ)*p;
+    cur+=(tgt-cur)*(REDUCED?1:0.09);
+    mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
+    camera.position.set(mx*1.1,-my*0.7,cur);
+    camera.lookAt(mx*0.5,-my*0.3,cur-10);
+    for(var i=0;i<planes.length;i++){
+      var d=cur-planes[i].position.z;             /* distance ahead of camera */
+      var rev=Math.min(1,Math.max(0,(FOCUS+4.5-d)/6.5));
+      uniforms[i].uReveal.value=rev;
+      uniforms[i].uBlur.value=Math.min(1,Math.abs(d-FOCUS)/13);
+      uniforms[i].uDim.value=Math.max(0.18,1-Math.abs(d-FOCUS)/22);
+      uniforms[i].uOpacity.value=d<1.2?Math.max(0,(d-0.4)/0.8):(d>34?Math.max(0,1-(d-34)/6):1);
+    }
+    progfill.style.width=(p*100)+'%';
+    renderer.render(scene,camera);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  renderer.domElement.addEventListener('webglcontextlost',function(e){e.preventDefault();location.reload()});
+}
+</script>
+</body>
+</html>
